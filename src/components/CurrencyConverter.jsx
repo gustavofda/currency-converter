@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../css/CurrencyConverter.module.css';
+import icon from '../assets/icon.svg';
 
 const CurrencyConverter = () => {
   const [amount, setAmount] = useState(1);
@@ -10,7 +11,6 @@ const CurrencyConverter = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Função para buscar a taxa de câmbio
   const fetchExchangeRate = async () => {
     setLoading(true);
     setError(null);
@@ -30,7 +30,6 @@ const CurrencyConverter = () => {
     }
   };
 
-  // Realiza a conversão com base nas taxas de câmbio
   const handleConvert = () => {
     if (!exchangeRates[toCurrency]) {
       return;
@@ -39,12 +38,10 @@ const CurrencyConverter = () => {
     setConvertedAmount(result);
   };
 
-  // Chama a função de busca de taxas quando o 'fromCurrency' mudar
   useEffect(() => {
     fetchExchangeRate();
   }, [fromCurrency]);
 
-  // Chama a conversão toda vez que o 'amount', 'fromCurrency' ou 'toCurrency' mudarem
   useEffect(() => {
     if (exchangeRates[toCurrency]) {
       handleConvert();
@@ -52,38 +49,41 @@ const CurrencyConverter = () => {
   }, [amount, toCurrency, exchangeRates]);
 
   return (
-    <div className={styles.container}>
-      <h2>Conversor de Moedas</h2>
-      <input
-        type="number"
-        value={amount}
-        onChange={(e) => setAmount(e.target.value)}
-        disabled={loading}
-      />
-      <select
-        value={fromCurrency}
-        onChange={(e) => setFromCurrency(e.target.value)}
-        disabled={loading}
-      >
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-        <option value="BRL">BRL</option>
-      </select>
-      <span> para </span>
-      <select
-        value={toCurrency}
-        onChange={(e) => setToCurrency(e.target.value)}
-        disabled={loading}
-      >
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-        <option value="BRL">BRL</option>
-      </select>
-      <button onClick={handleConvert} disabled={loading}>
-        {loading ? 'Carregando...' : 'Converter'}
-      </button>
-      {error && <p className={styles.error}>{error}</p>}
-      <p className={styles.result}>Resultado: {convertedAmount} {toCurrency}</p>
+    <div className={styles.pageWrapper}>
+      <img src={icon} alt="Ícone" className={styles.icon} />
+      <div className={styles.container}>
+        <h2>Conversor de Moedas</h2>
+        <input
+          type="number"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          disabled={loading}
+        />
+        <select
+          value={fromCurrency}
+          onChange={(e) => setFromCurrency(e.target.value)}
+          disabled={loading}
+        >
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="BRL">BRL</option>
+        </select>
+        <span> para </span>
+        <select
+          value={toCurrency}
+          onChange={(e) => setToCurrency(e.target.value)}
+          disabled={loading}
+        >
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="BRL">BRL</option>
+        </select>
+        <button onClick={handleConvert} disabled={loading}>
+          {loading ? 'Carregando...' : 'Converter'}
+        </button>
+        {error && <p className={styles.error}>{error}</p>}
+        <p className={styles.result}>Resultado: {convertedAmount} {toCurrency}</p>
+      </div>
     </div>
   );
 };
