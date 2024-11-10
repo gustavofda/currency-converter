@@ -1,0 +1,71 @@
+body {
+    background-color: #121212; /* Cor de fundo preta */
+    color: #fff; /* Texto branco para o corpo */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 0;
+    height: 100%;
+  }
+  
+  /* Garantir que o container do componente tenha um fundo escuro também */
+  .container {
+    max-width: 400px;
+    width: 100%; /* Garantir que o container ocupe no máximo 100% da largura disponível */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #121212; /* Cor de fundo escura para o container */
+    color: #fff; /* Texto branco no container */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box; /* Garantir que padding não aumente a largura total */
+  }
+  
+  /* Estilo para o título */
+  h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para input, select e button */
+  input,
+  select,
+  button {
+    width: 100%; /* Garante que os campos ocupem toda a largura disponível dentro do container */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    box-sizing: border-box; /* Garantir que padding não ultrapasse o tamanho do elemento */
+  }
+  
+  /* Estilo do botão */
+  button {
+    background-color: #6200ea;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+  }
+  
+  /* Estilo para mensagens de erro */
+  .error {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Estilo para o resultado da conversão */
+  .result {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }  
