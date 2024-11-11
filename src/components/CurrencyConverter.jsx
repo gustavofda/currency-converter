@@ -38,15 +38,10 @@ const CurrencyConverter = () => {
     setConvertedAmount(result);
   };
 
+  // Este useEffect agora só vai buscar as taxas de câmbio quando a moeda de origem mudar
   useEffect(() => {
     fetchExchangeRate();
   }, [fromCurrency]);
-
-  useEffect(() => {
-    if (exchangeRates[toCurrency]) {
-      handleConvert();
-    }
-  }, [amount, toCurrency, exchangeRates]);
 
   return (
     <div className={styles.pageWrapper}>
