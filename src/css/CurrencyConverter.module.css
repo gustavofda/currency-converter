@@ -2,7 +2,7 @@ body {
   background-color: #121212;
   color: #fff;
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 0;
   height: 100%;
 }
@@ -20,44 +20,107 @@ body {
   height: auto;
 }
 
-/* Garantir que o container do componente tenha um fundo escuro também */
+/* Container com fundo escuro e bordas arredondadas */
 .container {
   max-width: 400px;
   width: 100%;
   padding: 20px;
-  background-color: #121212;
+  background-color: #1a1a1a;
   color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
   box-sizing: border-box;
 }
 
-/* Estilo para o título */
+/* Título */
 h2 {
   text-align: center;
   color: #fff;
   margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
 }
 
-/* Estilos para input, select e button */
-input,
+/* Contêiner do campo de entrada com botões de incremento e decremento */
+.amountContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.amountInput {
+  width: 80px;
+  padding: 12px;
+  margin: 0 10px;
+  border: 2px solid #444;
+  border-radius: 6px;
+  background-color: #333;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.amountInput:focus {
+  border-color: #6200ea;
+  outline: none;
+  box-shadow: 0 0 5px #6200ea;
+}
+
+.increment, .decrement {
+  background-color: #333;
+  border: 2px solid #444;
+  color: #fff;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.increment:hover, .decrement:hover {
+  background-color: #444;
+}
+
+.increment:active, .decrement:active {
+  background-color: #555;
+}
+
+.increment:focus, .decrement:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(98, 0, 234, 0.5);
+}
+
+/* Estilos para os selects e o botão */
 select,
 button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin: 10px 0;
-  border: 1px solid #444;
-  border-radius: 4px;
+  border: 2px solid #444;
+  border-radius: 6px;
   background-color: #333;
   color: #fff;
-  box-sizing: border-box;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+select:focus,
+button:focus {
+  border-color: #6200ea;
+  outline: none;
+  box-shadow: 0 0 5px #6200ea;
 }
 
 button {
   background-color: #6200ea;
   color: white;
-  padding: 10px;
-  font-size: 16px;
+  font-size: 18px;
   border: none;
   cursor: pointer;
 }

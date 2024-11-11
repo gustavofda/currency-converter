@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../css/CurrencyConverter.module.css';
 import icon from '../assets/icon.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const CurrencyConverter = () => {
   const [amount, setAmount] = useState(1);
@@ -38,7 +40,9 @@ const CurrencyConverter = () => {
     setConvertedAmount(result);
   };
 
-  // Este useEffect agora só vai buscar as taxas de câmbio quando a moeda de origem mudar
+  const increment = () => setAmount((prev) => (parseFloat(prev) + 0.01).toFixed(2));
+  const decrement = () => setAmount((prev) => (parseFloat(prev) - 0.01).toFixed(2));
+
   useEffect(() => {
     fetchExchangeRate();
   }, [fromCurrency]);
@@ -48,12 +52,24 @@ const CurrencyConverter = () => {
       <img src={icon} alt="Ícone" className={styles.icon} />
       <div className={styles.container}>
         <h2>Conversor de Moedas</h2>
-        <input
-          type="number"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          disabled={loading}
-        />
+        
+        {/* Container do input com botões de incremento e decremento */}
+        <div className={styles.amountContainer}>
+          <button className={styles.increment} onClick={increment}>
+            <FontAwesomeIcon icon={faChevronUp} />
+          </button>
+          <input
+            type="number"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            disabled={loading}
+            className={styles.amountInput}
+          />
+          <button className={styles.decrement} onClick={decrement}>
+            <FontAwesomeIcon icon={faChevronDown} />
+          </button>
+        </div>
+
         <select
           value={fromCurrency}
           onChange={(e) => setFromCurrency(e.target.value)}
@@ -63,7 +79,9 @@ const CurrencyConverter = () => {
           <option value="EUR">EUR</option>
           <option value="BRL">BRL</option>
         </select>
+
         <span> para </span>
+
         <select
           value={toCurrency}
           onChange={(e) => setToCurrency(e.target.value)}
@@ -73,9 +91,11 @@ const CurrencyConverter = () => {
           <option value="EUR">EUR</option>
           <option value="BRL">BRL</option>
         </select>
+
         <button onClick={handleConvert} disabled={loading}>
           {loading ? 'Carregando...' : 'Converter'}
         </button>
+
         {error && <p className={styles.error}>{error}</p>}
         <p className={styles.result}>Resultado: {convertedAmount} {toCurrency}</p>
       </div>
