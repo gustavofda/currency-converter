@@ -1,3 +1,4 @@
+/* Estilos globais para o corpo da página */
 body {
   background-color: #121212; /* Cor de fundo escura para todo o corpo */
   color: #fff; /* Cor de texto branco para contraste */
@@ -155,4 +156,65 @@ button:disabled {
   font-size: 18px; /* Tamanho da fonte */
   font-weight: bold; /* Texto em negrito */
   text-align: center; /* Texto centralizado */
+}
+
+/* Estilos responsivos para tablets */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%; /* Reduz a largura do container */
+  }
+
+  .icon {
+    width: 200px; /* Reduz a largura do ícone */
+  }
+
+  h2 {
+    font-size: 20px; /* Reduz o tamanho do título */
+  }
+
+  .amountInput {
+    width: 60px; /* Reduz a largura do campo de entrada */
+  }
+
+  .increment, .decrement {
+    width: 40px; /* Reduz a largura dos botões */
+    height: 40px; /* Reduz a altura dos botões */
+  }
+
+  button {
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+  }
+}
+
+/* Estilos responsivos para celulares */
+@media (max-width: 480px) {
+  .container {
+    max-width: 95%; /* Aumenta a largura do container para caber melhor */
+    padding: 15px; /* Ajusta o padding do container */
+  }
+
+  .icon {
+    width: 150px; /* Reduz a largura do ícone */
+    margin-right: 10px; /* Reduz a margem à direita */
+  }
+
+  h2 {
+    font-size: 18px; /* Reduz ainda mais o tamanho do título */
+    margin-bottom: 15px; /* Ajusta o espaço abaixo do título */
+  }
+
+  .amountInput {
+    width: 50px; /* Reduz ainda mais a largura do campo de entrada */
+    padding: 10px; /* Reduz o padding */
+  }
+
+  .increment, .decrement {
+    width: 35px; /* Reduz a largura dos botões */
+    height: 35px; /* Reduz a altura dos botões */
+  }
+
+  button {
+    font-size: 14px; /* Reduz o tamanho da fonte do botão */
+    padding: 10px; /* Ajusta o padding do botão */
+  }
 }
