@@ -1,143 +1,158 @@
 body {
-  background-color: #121212;
-  color: #fff;
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 0;
-  height: 100%;
+  background-color: #121212; /* Cor de fundo escura para todo o corpo */
+  color: #fff; /* Cor de texto branco para contraste */
+  margin: 0; /* Remove margens padrão */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte padrão */
+  padding: 0; /* Remove padding padrão */
+  height: 100%; /* Define altura completa da página */
 }
 
+/* Centralização da página */
 .pageWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Centraliza verticalmente na tela */
+  display: flex; /* Flex container para alinhamento */
+  align-items: center; /* Alinha verticalmente ao centro */
+  justify-content: center; /* Alinha horizontalmente ao centro */
+  height: 100vh; /* Altura de toda a tela para centralizar verticalmente */
 }
 
+/* Ícone */
 .icon {
-  margin-right: 20px;
-  width: 300px; /* Ajuste o tamanho para ficar proporcional */
-  height: auto;
+  margin-right: 20px; /* Espaço à direita do ícone */
+  width: 300px; /* Largura fixa do ícone */
+  height: auto; /* Altura ajustada proporcionalmente */
 }
 
 /* Container com fundo escuro e bordas arredondadas */
 .container {
-  max-width: 400px;
-  width: 100%;
-  padding: 20px;
-  background-color: #1a1a1a;
-  color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-  box-sizing: border-box;
+  max-width: 400px; /* Largura máxima do container */
+  width: 100%; /* Largura total disponível */
+  padding: 20px; /* Espaçamento interno */
+  background-color: #1a1a1a; /* Fundo escuro */
+  color: #fff; /* Cor de texto branca */
+  border-radius: 12px; /* Bordas arredondadas */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra */
+  box-sizing: border-box; /* Inclui padding e border no tamanho total */
 }
 
-/* Título */
+/* Estilos do título */
 h2 {
-  text-align: center;
-  color: #fff;
-  margin-bottom: 20px;
-  font-size: 24px;
-  font-weight: 600;
+  text-align: center; /* Centraliza o texto */
+  color: #fff; /* Cor do texto branca */
+  margin-bottom: 20px; /* Espaço abaixo do título */
+  font-size: 24px; /* Tamanho da fonte */
+  font-weight: 600; /* Espessura do texto */
 }
 
-/* Contêiner do campo de entrada com botões de incremento e decremento */
+/* Contêiner do campo de entrada com botões */
 .amountContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
+  display: flex; /* Flex container para alinhamento */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Alinha verticalmente */
+  margin-bottom: 20px; /* Espaço abaixo do container */
 }
 
+/* Estilos para o campo de entrada de quantidade */
 .amountInput {
-  width: 80px;
-  padding: 12px;
-  margin: 0 10px;
-  border: 2px solid #444;
-  border-radius: 6px;
-  background-color: #333;
-  color: #fff;
-  font-size: 18px;
-  text-align: center;
-  transition: all 0.3s ease;
+  width: 80px; /* Largura do campo de entrada */
+  padding: 12px; /* Espaçamento interno */
+  margin: 0 10px; /* Margem lateral */
+  border: 2px solid #444; /* Borda cinza escura */
+  border-radius: 6px; /* Bordas arredondadas */
+  background-color: #333; /* Fundo escuro */
+  color: #fff; /* Cor de texto branca */
+  font-size: 18px; /* Tamanho da fonte */
+  text-align: center; /* Texto centralizado */
+  transition: all 0.3s ease; /* Transição suave */
+  -webkit-appearance: none; /* Remove setas no WebKit */
+  -moz-appearance: textfield; /* Remove setas no Firefox */
+}
+
+/* Remove as setas de incremento e decremento */
+.amountInput::-webkit-outer-spin-button,
+.amountInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .amountInput:focus {
-  border-color: #6200ea;
-  outline: none;
-  box-shadow: 0 0 5px #6200ea;
+  border-color: #6200ea; /* Cor de borda ao focar */
+  outline: none; /* Remove outline */
+  box-shadow: 0 0 5px #6200ea; /* Sombra ao focar */
 }
 
+/* Estilos dos botões de incremento e decremento */
 .increment, .decrement {
-  background-color: #333;
-  border: 2px solid #444;
-  color: #fff;
-  font-size: 20px;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
+  background-color: #333; /* Fundo escuro */
+  border: 2px solid #444; /* Borda cinza escura */
+  color: #fff; /* Cor de texto branca */
+  font-size: 20px; /* Tamanho da fonte */
+  width: 50px; /* Largura do botão */
+  height: 50px; /* Altura do botão */
+  cursor: pointer; /* Cursor de ponteiro */
+  border-radius: 50%; /* Botões redondos */
+  display: flex; /* Flex container */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  transition: all 0.3s ease; /* Transição suave */
 }
 
 .increment:hover, .decrement:hover {
-  background-color: #444;
+  background-color: #444; /* Fundo escurecido ao passar o mouse */
 }
 
 .increment:active, .decrement:active {
-  background-color: #555;
+  background-color: #555; /* Fundo mais escuro ao clicar */
 }
 
 .increment:focus, .decrement:focus {
-  outline: none;
-  box-shadow: 0 0 10px rgba(98, 0, 234, 0.5);
+  outline: none; /* Remove outline */
+  box-shadow: 0 0 10px rgba(98, 0, 234, 0.5); /* Sombra ao focar */
 }
 
-/* Estilos para os selects e o botão */
+/* Estilos para selects e botão */
 select,
 button {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 2px solid #444;
-  border-radius: 6px;
-  background-color: #333;
-  color: #fff;
-  font-size: 16px;
-  transition: all 0.3s ease;
+  width: 100%; /* Largura total */
+  padding: 12px; /* Espaçamento interno */
+  margin: 10px 0; /* Margem superior e inferior */
+  border: 2px solid #444; /* Borda cinza escura */
+  border-radius: 6px; /* Bordas arredondadas */
+  background-color: #333; /* Fundo escuro */
+  color: #fff; /* Cor de texto branca */
+  font-size: 16px; /* Tamanho da fonte */
+  transition: all 0.3s ease; /* Transição suave */
 }
 
 select:focus,
 button:focus {
-  border-color: #6200ea;
-  outline: none;
-  box-shadow: 0 0 5px #6200ea;
+  border-color: #6200ea; /* Cor da borda ao focar */
+  outline: none; /* Remove outline */
+  box-shadow: 0 0 5px #6200ea; /* Sombra ao focar */
 }
 
 button {
-  background-color: #6200ea;
-  color: white;
-  font-size: 18px;
-  border: none;
-  cursor: pointer;
+  background-color: #6200ea; /* Fundo roxo */
+  color: white; /* Cor de texto branca */
+  font-size: 18px; /* Tamanho da fonte */
+  border: none; /* Remove a borda */
+  cursor: pointer; /* Cursor de ponteiro */
 }
 
 button:disabled {
-  background-color: #555;
-  cursor: not-allowed;
+  background-color: #555; /* Fundo escurecido */
+  cursor: not-allowed; /* Cursor não permitido */
 }
 
+/* Estilos para mensagens de erro */
 .error {
-  color: red;
-  text-align: center;
-  margin-top: 20px;
+  color: red; /* Cor vermelha para erros */
+  text-align: center; /* Texto centralizado */
+  margin-top: 20px; /* Espaço acima da mensagem */
 }
 
+/* Estilos para o resultado */
 .result {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
+  font-size: 18px; /* Tamanho da fonte */
+  font-weight: bold; /* Texto em negrito */
+  text-align: center; /* Texto centralizado */
 }
